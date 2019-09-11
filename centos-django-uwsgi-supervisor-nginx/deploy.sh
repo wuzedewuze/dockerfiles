@@ -4,7 +4,7 @@ docker_compose_path=$project_path/django_login_manager/bin
 mkdir -p $project_path
 rm -rf $project_path/django_login_manager  # 删除原来的volume映射的工程目录
 cd $project_path
-git clone http://lvyue.ncoppo.com:66/DevOps/django_login_manager.git
+git clone http://gitlab:66/DevOps/django_login_manager.git
 setting_path=$project_path/django_login_manager/django_login_manager
 rm -f  $setting_path/settings.py
 mv $setting_path/settings-up.py $setting_path/settings.py   # 根据自己的生产配置修改
