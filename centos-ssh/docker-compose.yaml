@@ -1,0 +1,9 @@
+version: "3.3"
+services:
+  django-env:
+    container_name: centos-ssh
+    image: wuzedweuze/centos-ssh:centos7.6
+    restart: always
+    command: /usr/sbin/sshd -D
+    ports:
+      - "1122:22"

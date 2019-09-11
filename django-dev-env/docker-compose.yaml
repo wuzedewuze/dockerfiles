@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  django-env:
+    container_name: django-env
+    image: wuzedweuze/django-dev-env:1.0
+    restart: always
+    command: /usr/sbin/sshd -D
+    ports:
+      - "222:22"
+      - "8000:8000"
