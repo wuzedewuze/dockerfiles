@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  manager-django:
+    container_name: wytest
+    image: wytest
+    restart: always
+    command:
+      - /bin/sh
+      - -c
+      - |
+        rm -rf /home/docker/code/static_new
+        /usr/local/python3/bin/python3 /home/docker/code/manage.py collectstatic
+        supervisord -n
+    volumes:
+      - "/home/docker_volume/django-devops/django_login_manager:/home/docker/code"
+    ports:
+      - 8888:80
